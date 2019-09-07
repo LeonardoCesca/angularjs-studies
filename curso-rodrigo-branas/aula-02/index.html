@@ -17,8 +17,9 @@
                 <th>Telefone</th>
             </tr>
             <tr ng-repeat="contato in contatos">
-                <td>{{contato.nome}}</td>
-                <td>{{contato.telefone}}</td>
+               <td ng-repeat="(key,value) in contato">
+                    {{value}}
+               </td>
             </tr>
         </table>
     </div>
