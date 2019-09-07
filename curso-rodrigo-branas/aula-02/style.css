@@ -7,4 +7,13 @@
 
 .table { 
     margin-top: 20px;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+.form-control {
+    margin-bottom: 5px;
 }
