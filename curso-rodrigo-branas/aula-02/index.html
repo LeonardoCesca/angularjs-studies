@@ -10,13 +10,28 @@
 </head>
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
-        <h4>{{app}}</h4>
+        <h3>{{app}}</h3>
+        <table class="table table-striped">
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+            </tr>
+            <tr ng-repeat="contato in contatos">
+                <td>{{contato.nome}}</td>
+                <td>{{contato.telefone}}</td>
+            </tr>
+        </table>
     </div>
     <script src="lib/angular/angular.min.js"></script>
     <script>
         angular.module("listaTelefonica", []);
         angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope) {
-            $scope.app = "Lista Telefonica"
+            $scope.app = "Lista Telefonica";
+            $scope.contatos = [
+                {nome: "João", telefone: "999999999"},
+                {nome: "Leonardo", telefone: "999998888"},
+                {nome: "Pedro", telefone: "999997777"},
+            ];
         });
     </script>
 </body>
