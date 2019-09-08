@@ -21,3 +21,7 @@ th {
 .selecionado {
     background-color: yellow;
 }
+
+.negrito {
+    font-weight: bold;
+}
