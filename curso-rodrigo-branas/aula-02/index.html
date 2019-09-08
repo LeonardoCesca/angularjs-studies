@@ -34,7 +34,7 @@
             <option value="">Selecione uma operadora</option>
         </select>
         <button class="btn btn-primary" ng-click="adicionarContato(contato)" ng-disabled="!contato.nome || !contato.telefone">Adicionar Contato</button>
-        <button class="btn btn-danger" ng-click="apagarContato(contatos)" ng-show="isContatoSelecionado(contatos)">Apagar Contato</button>
+        <button class="btn btn-danger" ng-click="apagarContato(contatos)" ng-if="isContatoSelecionado(contatos)">Apagar Contato</button>
     </div>
     <script src="lib/angular/angular.min.js"></script>
     <script>
