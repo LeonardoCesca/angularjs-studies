@@ -22,9 +22,9 @@
             </tr>
         </table>
         <hr />
-        <input class="form-control" type="text" ng-model="nome" placeholder="Nome" />
-        <input class="form-control" type="text" ng-model="telefone" placeholder="Telefone" />
-        <button class="btn btn-primary" ng-click="adicionarContato(nome, telefone)">Adicionar Contato</button>
+        <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome" />
+        <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone" />
+        <button class="btn btn-primary" ng-click="adicionarContato(contato)">Adicionar Contato</button>
     </div>
     <script src="lib/angular/angular.min.js"></script>
     <script>
@@ -36,8 +36,8 @@
                 {nome: "Leonardo", telefone: "999998888"},
                 {nome: "Pedro", telefone: "999997777"},
             ];
-            $scope.adicionarContato = function (nome, telefone) {
-                $scope.contatos.push({nome: nome, telefone: telefone});
+            $scope.adicionarContato = function (contato) {
+                $scope.contatos.push(angular.copy(contato));
             };
         });
     </script>
