@@ -11,13 +11,13 @@
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
         <h3>{{app}}</h3>
-        <table class="table table-striped">
+        <table class="table">
             <tr>
                 <th>Nome</th>
                 <th>Telefone</th>
                 <th>Operadora</th>
             </tr>
-            <tr ng-repeat="contato in contatos">
+            <tr ng-class="classe" ng-repeat="contato in contatos">
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
                 <td>{{contato.operadora.nome}}</td>
@@ -48,6 +48,7 @@
                 {nome: "GVT", codigo: 25, categoria: "Fixo"},
                 {nome: "Embratel", codigo: 21, categoria: "Fixo"},
             ];
+            $scope.classe = "selecionado";
             $scope.adicionarContato = function (contato) {
                 $scope.contatos.push(angular.copy(contato));
                 delete $scope.contato;
