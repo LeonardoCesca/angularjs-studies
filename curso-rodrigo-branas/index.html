@@ -29,14 +29,17 @@
         </table>
         <hr />
         <form name="contatoForm">
-            <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome" ng-required="true" />    
-            <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone" ng-required="true" />
+            <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" />    
+            <input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone" ng-required="true" />
             <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome group by operadora.categoria for operadora in operadoras">
                 <option value="">Selecione uma operadora</option>
             </select>
         </form>
-        <div ng-show="contatoForm.$invalid" class="alert alert-danger">
-            Por favor, preencha o nome e o telefone!
+        <div ng-show="contatoForm.nome.$invalid" class="alert alert-danger">
+            Por favor, preencha o nome!
+        </div>
+        <div ng-show="contatoForm.telefone.$invalid" class="alert alert-danger">
+            Por favor, preencha o telefone!
         </div>
             <button class="btn btn-primary" ng-click="adicionarContato(contato)" ng-disabled="contatoForm.$invalid">Adicionar Contato</button>
             <button class="btn btn-danger" ng-click="apagarContato(contatos)" ng-if="isContatoSelecionado(contatos)">Apagar Contato</button>
