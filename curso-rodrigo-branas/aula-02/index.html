@@ -56,10 +56,9 @@
                 delete $scope.contato;
             };
             $scope.apagarContato = function (contatos) {
-                let contatoSelecionados = contatos.filter(function(contato) {
-                    if(contato.selecionado) return contato;
+                $scope.contatos = contatos.filter(function(contato) {
+                    if(!contato.selecionado) return contato;
                 });
-                console.log(contatoSelecionados);
             }
         });
     </script>
