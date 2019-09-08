@@ -35,10 +35,10 @@
                 <option value="">Selecione uma operadora</option>
             </select>
         </form>
-        <div ng-show="contatoForm.nome.$invalid" class="alert alert-danger">
+        <div ng-show="contatoForm.nome.$invalid && contatoForm.nome.$dirty" class="alert alert-danger">
             Por favor, preencha o nome!
         </div>
-        <div ng-show="contatoForm.telefone.$invalid" class="alert alert-danger">
+        <div ng-show="contatoForm.telefone.$invalid && contatoForm.telefone.$dirty" class="alert alert-danger">
             Por favor, preencha o telefone!
         </div>
             <button class="btn btn-primary" ng-click="adicionarContato(contato)" ng-disabled="contatoForm.$invalid">Adicionar Contato</button>
@@ -65,6 +65,7 @@
             $scope.adicionarContato = function (contato) {
                 $scope.contatos.push(angular.copy(contato));
                 delete $scope.contato;
+                $scope.contatoForm.$setPristine();
             };
             $scope.apagarContato = function (contatos) {
                 $scope.contatos = contatos.filter(function(contato) {
