@@ -32,7 +32,7 @@
             <option value="">Selecione uma operadora</option>
         </select>
         <button class="btn btn-primary" ng-click="adicionarContato(contato)" ng-disabled="!contato.nome || !contato.telefone">Adicionar Contato</button>
-        <button class="btn btn-danger" ng-click="apagarContato(contatos)">Apagar Contato</button>
+        <button class="btn btn-danger" ng-click="apagarContato(contatos)" ng-disabled="!isContatoSelecionado(contatos)">Apagar Contato</button>
     </div>
     <script src="lib/angular/angular.min.js"></script>
     <script>
@@ -59,6 +59,11 @@
                 $scope.contatos = contatos.filter(function(contato) {
                     if(!contato.selecionado) return contato;
                 });
+            }
+            $scope.isContatoSelecionado = function (contatos) {
+               return contatos.some(function(contato) {
+                    return contato.selecionado;
+                })
             }
         });
     </script>
