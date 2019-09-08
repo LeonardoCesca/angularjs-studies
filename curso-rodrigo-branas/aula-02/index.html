@@ -38,6 +38,7 @@
             ];
             $scope.adicionarContato = function (contato) {
                 $scope.contatos.push(angular.copy(contato));
+                delete $scope.contato;
             };
         });
     </script>
