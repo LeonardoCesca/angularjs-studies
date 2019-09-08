@@ -32,6 +32,7 @@
             <option value="">Selecione uma operadora</option>
         </select>
         <button class="btn btn-primary" ng-click="adicionarContato(contato)" ng-disabled="!contato.nome || !contato.telefone">Adicionar Contato</button>
+        <button class="btn btn-danger" ng-click="apagarContato(contatos)">Apagar Contato</button>
     </div>
     <script src="lib/angular/angular.min.js"></script>
     <script>
@@ -50,12 +51,16 @@
                 {nome: "GVT", codigo: 25, categoria: "Fixo"},
                 {nome: "Embratel", codigo: 21, categoria: "Fixo"},
             ];
-            $scope.classe1 = "selecionado";
-            $scope.classe2 = "negrito";
             $scope.adicionarContato = function (contato) {
                 $scope.contatos.push(angular.copy(contato));
                 delete $scope.contato;
             };
+            $scope.apagarContato = function (contatos) {
+                let contatoSelecionados = contatos.filter(function(contato) {
+                    if(contato.selecionado) return contato;
+                });
+                console.log(contatoSelecionados);
+            }
         });
     </script>
 </body>
