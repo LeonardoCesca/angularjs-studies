@@ -11,13 +11,16 @@
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
         <h3>{{app}}</h3>
+        {{contatos}}
         <table class="table">
             <tr>
+                <th></th>
                 <th>Nome</th>
                 <th>Telefone</th>
                 <th>Operadora</th>
             </tr>
-            <tr ng-class="[classe1, classe2]" ng-repeat="contato in contatos">
+            <tr ng-class="{selecionado: contato.selecionado}" ng-repeat="contato in contatos">
+                <td><input type="checkbox" ng-model="contato.selecionado"></td>
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
                 <td>{{contato.operadora.nome}}</td>
