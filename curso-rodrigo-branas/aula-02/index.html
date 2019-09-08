@@ -19,7 +19,7 @@
                 <th>Telefone</th>
                 <th>Operadora</th>
             </tr>
-            <tr ng-class="{selecionado: contato.selecionado}" ng-repeat="contato in contatos">
+            <tr ng-class="{selecionado: contato.selecionado, negrito: contato.selecionado}" ng-repeat="contato in contatos">
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
