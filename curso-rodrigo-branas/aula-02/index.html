@@ -36,6 +36,7 @@
         <button class="btn btn-primary" ng-click="adicionarContato(contato)" ng-disabled="!contato.nome || !contato.telefone">Adicionar Contato</button>
         <button class="btn btn-danger" ng-click="apagarContato(contatos)" ng-if="isContatoSelecionado(contatos)">Apagar Contato</button>
     </div>
+    <div ng-include="'footer.html'"></div>
     <script src="lib/angular/angular.min.js"></script>
     <script>
         angular.module("listaTelefonica", []);
