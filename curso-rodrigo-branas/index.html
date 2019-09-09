@@ -33,7 +33,7 @@
         <form name="contatoForm">
             <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10" />    
             <input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/" />
-            <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome group by operadora.categoria for operadora in operadoras | orderBy: 'nome'">
+            <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome + '( ' + (operadora.preco | currency) + '  )' group by operadora.categoria for operadora in operadoras | orderBy: 'nome'">
                 <option value="">Selecione uma operadora</option>
             </select>
         </form>
@@ -64,11 +64,11 @@
                 {nome: "Pedro", telefone: "999997777", data: new Date(), cor: "red"},
             ];
             $scope.operadoras = [
-                {nome: "Oi", codigo: 14, categoria: "Celular"},
-                {nome: "Vivo", codigo: 15, categoria: "Celular"},
-                {nome: "Tim", codigo: 41, categoria: "Celular"},
-                {nome: "GVT", codigo: 25, categoria: "Fixo"},
-                {nome: "Embratel", codigo: 21, categoria: "Fixo"},
+                {nome: "Oi", codigo: 14, categoria: "Celular", preco: 2},
+                {nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1},
+                {nome: "Tim", codigo: 41, categoria: "Celular", preco: 3},
+                {nome: "GVT", codigo: 25, categoria: "Fixo", preco: 1},
+                {nome: "Embratel", codigo: 21, categoria: "Fixo", preco: 2},
             ];
             $scope.adicionarContato = function (contato) {
                 $scope.contatos.push(angular.copy(contato));
