@@ -74,9 +74,13 @@
             };
 
             $scope.adicionarContato = function (contato) {
-                $scope.contatos.push(angular.copy(contato));
-                delete $scope.contato;
-                $scope.contatoForm.$setPristine();
+                contato.data = new Date();
+                $http.post("http://localhost:3412/contatos", contato).then(function (data) {
+                    delete $scope.contato;
+                    $scope.contatoForm.$setPristine();
+                    $scope.contatos.push(data);
+                    carregarContatos();
+                });
             };
             $scope.apagarContato = function (contatos) {
                 $scope.contatos = contatos.filter(function(contato) {
