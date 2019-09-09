@@ -63,7 +63,13 @@
 
             let carregarContatos = function() {
                 $http.get("http://localhost:3412/contatos").then(function(data){
-                    console.log(data)
+                    $scope.contatos = data.data;
+                });
+            };
+
+            let carregarOperadoras = function() {
+                $http.get("http://localhost:3412/operadoras").then(function(data){
+                    $scope.operadoras = data.data;
                 });
             };
 
@@ -87,6 +93,8 @@
             }
 
             carregarContatos();
+            carregarOperadoras();
+
         });
     </script>
 </body>
