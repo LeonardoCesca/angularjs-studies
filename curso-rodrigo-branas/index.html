@@ -56,20 +56,17 @@
     <script src="lib/angular/angular.min.js"></script>
     <script>
         angular.module("listaTelefonica", []);
-        angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope) {
+        angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, $http) {
             $scope.app = "Lista Telefonica";
-            $scope.contatos = [
-                {nome: "João", telefone: "999999999", data: new Date(), cor: "blue"},
-                {nome: "Leonardo", telefone: "999998888", data: new Date(), cor: "yellow"},
-                {nome: "Pedro", telefone: "999997777", data: new Date(), cor: "red"},
-            ];
-            $scope.operadoras = [
-                {nome: "Oi", codigo: 14, categoria: "Celular", preco: 2},
-                {nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1},
-                {nome: "Tim", codigo: 41, categoria: "Celular", preco: 3},
-                {nome: "GVT", codigo: 25, categoria: "Fixo", preco: 1},
-                {nome: "Embratel", codigo: 21, categoria: "Fixo", preco: 2},
-            ];
+            $scope.contatos = [];
+            $scope.operadoras = [];
+
+            let carregarContatos = function() {
+                $http.get("http://localhost:3412/contatos").then(function(data){
+                    console.log(data)
+                });
+            };
+
             $scope.adicionarContato = function (contato) {
                 $scope.contatos.push(angular.copy(contato));
                 delete $scope.contato;
@@ -88,6 +85,8 @@
             $scope.ordenarPor = function (campo) {
                 $scope.criterioDeOrdenacao = campo;
             }
+
+            carregarContatos();
         });
     </script>
 </body>
