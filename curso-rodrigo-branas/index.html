@@ -11,6 +11,7 @@
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
         <h3>{{app}}</h3>
+        <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?" />
         <table ng-show="contatos.length > 0" class="table">
             <tr>
                 <th></th>
@@ -19,7 +20,7 @@
                 <th>Operadora</th>
                 <th>Data</th>
             </tr>
-            <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos">
+            <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter:criterioDeBusca">
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
                 <td>{{contato.nome | uppercase}}</td>
                 <td>{{contato.telefone}}</td>
