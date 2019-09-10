@@ -11,6 +11,7 @@
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
         <h3>{{app}}</h3>
+        {{message}}
         <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?" />
         <table ng-show="contatos.length > 0" class="table">
             <tr>
@@ -64,6 +65,8 @@
             let carregarContatos = function() {
                 $http.get("http://localhost:3412/contatos").then(function(data){
                     $scope.contatos = data.data;
+                }).catch(function(data) {
+                    $scope.message = "Aconteceu um problema: " + data.data;
                 });
             };
 
