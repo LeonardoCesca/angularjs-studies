@@ -18,6 +18,11 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
     };
 
     $scope.adicionarContato = function (contato) {
+        let serial = "";
+        while(serial.length < 20) {
+            serial += String.fromCharCode(Math.floor(Math.random() * 64) + 32);
+        }
+        contato.serial = serial;
         contato.data = new Date();
         contatosAPI.saveContatos(contato).then(function (data) {
             delete $scope.contato;
