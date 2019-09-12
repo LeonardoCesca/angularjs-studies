@@ -12,14 +12,9 @@
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
         <h3>{{app}}</h3>
-        <div class="ui-alert">
-            <div class="ui-alert-title">
-                Ops, aconteceu um problema
-            </div>
-            <div class="ui-alert-message">
-                {{message}}
-            </div>
-        </div>
+
+        <div ui-alert></div>
+
         <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?" />
         <table ng-show="contatos.length > 0" class="table">
             <tr>
@@ -74,5 +69,6 @@
     <script src="js/filters/nameFilter.js"></script>
     <script src="js/filters/ellipsisFilter.js"></script>
     <script src="js/value/configValue.js"></script>
+    <script src="js/directives/uiAlertDirective.js"></script>
 </body>
 </html>
