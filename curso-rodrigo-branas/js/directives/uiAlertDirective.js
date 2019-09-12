@@ -4,7 +4,9 @@ angular.module("listaTelefonica").directive("uiAlert", function() {
         replace: true,
         restrict: "AE",
         scope: {
-            topic: "@title"
+            topic: "@title",
+            error: "=message"
+            
         }
     };
 });
