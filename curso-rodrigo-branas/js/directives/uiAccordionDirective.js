@@ -4,6 +4,11 @@ angular.module("listaTelefonica").directive("uiAccordion", function() {
         scope: {
             title: "@title"
         },
-        transclude: true
+        transclude: true,
+        link: function(scope, element, attrs, ctrl) {
+            scope.open = function() {
+                scope.isOpen = !scope.isOpen;
+            }
+        } 
     };
 });
