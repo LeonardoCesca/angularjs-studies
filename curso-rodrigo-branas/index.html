@@ -11,6 +11,10 @@
 </head>
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
+
+        <ui-accordion title="Accordion 1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</ui-accordion>
+        <ui-accordion title="Accordion 2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</ui-accordion>
+
         <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?" />
         <table ng-show="contatos.length > 0" class="table">
             <tr>
@@ -68,5 +72,6 @@
     <script src="js/value/configValue.js"></script>
     <script src="js/directives/uiAlertDirective.js"></script>
     <script src="js/directives/uiDateDirective.js"></script>
+    <script src="js/directives/uiAccordionDirective.js"></script>
 </body>
 </html>
