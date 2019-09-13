@@ -3,6 +3,7 @@ angular.module("listaTelefonica").directive("uiAccordion", function() {
         templateUrl: "view/accordion.html",
         scope: {
             title: "@title"
-        }
+        },
+        transclude: true
     };
 });
