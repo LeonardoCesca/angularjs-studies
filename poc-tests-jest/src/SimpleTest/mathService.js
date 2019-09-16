@@ -9,8 +9,13 @@ angular.module('mathModule', [])
             return num1 * num2;
         }
 
+        let addDivisionNumbers = function(num1, num2) {
+            return num1 / num2;
+        }
+
         return {
             addTwoNumbers,
-            addMultiplyNumbers
+            addMultiplyNumbers,
+            addDivisionNumbers
         };
     });
