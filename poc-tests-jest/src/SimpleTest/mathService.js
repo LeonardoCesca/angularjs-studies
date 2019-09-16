@@ -5,7 +5,12 @@ angular.module('mathModule', [])
             return num1 + num2;
         };
 
+        let addMultiplyNumbers = function(num1, num2) {
+            return num1 * num2;
+        }
+
         return {
-            addTwoNumbers
+            addTwoNumbers,
+            addMultiplyNumbers
         };
     });
