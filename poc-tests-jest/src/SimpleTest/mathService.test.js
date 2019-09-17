@@ -38,3 +38,21 @@ describe('Success', function() {
     });
 
 });
+
+describe('Failure', function() {
+
+    it('4+2 should equal 6', function() {
+        let soma = _mathService.addTwoNumbers(4,3);
+        expect(soma).toEqual(6);
+    });
+
+    it('4*2 should equal 8', function() {
+        let multiplicacao = _mathService.addMultiplyNumbers(4,3);
+        expect(multiplicacao).toEqual(8);
+    });
+
+    it('4/2 should equal 2', function() {
+        let divisao = _mathService.addDivisionNumbers(4,3);
+        expect(divisao).toEqual(2);
+    });
+});
