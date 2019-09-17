@@ -12,7 +12,7 @@ beforeEach(inject(mathService => {
     _mathService = mathService;
 }));
 
-describe('Math service - addTwoNumbers', function() {
+describe('Success', function() {
 
     it('1 + 1 should equal 2', function() {
         let atual = _mathService.addTwoNumbers(1,1);
@@ -24,19 +24,11 @@ describe('Math service - addTwoNumbers', function() {
         expect(atual).toEqual(5);
     });
 
-});
-
-describe('Math service - addMultiplyNumbers', function() {
-
     it('(2+3)*4 should equal 20', function() {
         let soma = _mathService.addTwoNumbers(2,3);
         let multiplicacao = _mathService.addMultiplyNumbers(soma, 4);
         expect(multiplicacao).toEqual(20); 
     });
-
-});
-
-describe('Math service - addDivisionNumbers', function() {
 
     it('((2+2)* 2)/2 should equal 4', function() {
         let soma = _mathService.addTwoNumbers(2,2);
