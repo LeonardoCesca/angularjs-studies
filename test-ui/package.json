@@ -1,0 +1,15 @@
+{
+  "name": "test-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "angular": "^1.6.4",
+    "node-sass": "^4.10.0"
+  },
+  "author": "Leonardo Cesca",
+  "license": "ISC"
+}
