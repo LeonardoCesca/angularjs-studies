@@ -88,9 +88,22 @@
     justify-content: center;
     height: 78vh;
     width: 65vw;
-    background: #fff;
+    background: #000;
+    opacity: 0.9;
     overflow-y: auto;
 }
+
+.films-container::-webkit-scrollbar {
+    width: 6px;
+   }
+ 
+   .films-container::-webkit-scrollbar-thumb {
+     background: #888; 
+   }
+   
+   .films-container::-webkit-scrollbar-thumb:hover {
+     background: #555; 
+   }
 
 /* Films */
 
@@ -99,7 +112,36 @@
     flex-direction: column;
     width: 215px;
     height: 215px;
-    border: 1px solid #000;
+    border: 1px solid #fff;
+    color: #fff;
     margin: 10px;
     position: relative;
+    text-align: center;
+}
+
+.films__title {
+    padding-top: 10px;
+}
+
+.films__director {
+    font-size: 11px;
+    padding-bottom: 20px;
+}
+
+.films__producer {
+    font-size: 11px;
+    padding-bottom: 20px;
+}
+
+.films__release {
+    font-size: 11px;
+    padding-bottom: 20px;
+}
+
+.films-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 15px 0  0 10px;
+    color: #fff;
 }
