@@ -145,3 +145,17 @@
     padding: 15px 0  0 10px;
     color: #fff;
 }
+
+/* Info */
+
+.info {
+    width: 49px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.info img {
+    width: 36px;
+    cursor: pointer;
+}
