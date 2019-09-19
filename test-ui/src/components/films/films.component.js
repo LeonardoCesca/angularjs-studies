@@ -6,7 +6,8 @@
     .component("films", {
         templateUrl: "./src/components/films/films.html",
         bindings: {
-            title: '='
-        }
+            titleFilm:"="
+        },
+        controllerAs: 'vm',
     })
 })();

@@ -1,8 +1,8 @@
 <div class="container">
     <div class="films-container">
         <films
-            ng-repeat="film in films"
-            film="film">
+            ng-repeat="(index, film) in vm.films"
+            title-film="film.title">
         </films>
     </div>
 </div>
