@@ -1,3 +1,8 @@
 <div class="films">
-    {{ vm.titleFilm }}
+    <h3 class="films__title">{{ vm.titleFilm }}</h3>
+    <div class="films-box">
+        <p class="films__director">Director: {{ vm.directorFilm }}</p>
+        <p class="films__producer">Producer: {{ vm.producerFilm }}</p>
+        <p class="films__release">Release: {{ vm.releaseFilm }}</p>
+    </div>
 </div>

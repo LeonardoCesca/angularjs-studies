@@ -6,7 +6,10 @@
     .component("films", {
         templateUrl: "./src/components/films/films.html",
         bindings: {
-            titleFilm:"="
+            titleFilm:"=",
+            directorFilm: "=",
+            producerFilm: "=",
+            releaseFilm: "="
         },
         controllerAs: 'vm',
     })
