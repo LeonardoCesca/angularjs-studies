@@ -1,13 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background: #000;
-    width: 100%;
-    height: 100vh;
-}
+/* Header */
 
 .header {
     display: flex;
@@ -76,4 +67,35 @@ body {
     height: 1px;
     background: none;
     transform: translateX(-30px);
+}
+
+/* Films Container */
+
+.container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+
+.films-container {
+    height: 78vh;
+    width: 65vw;
+    background: #fff;
+    overflow-y: auto;
+}
+
+/* Films */
+
+.films {
+    display: flex;
+    flex-direction: column;
+    width: 215px;
+    height: 215px;
+    border: 1px solid #000;
+    margin: 10px;
+    position: relative;
 }
