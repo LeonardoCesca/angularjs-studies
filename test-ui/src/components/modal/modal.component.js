@@ -8,6 +8,7 @@
         bindings: {
          abrirModal: "=",
          isOpen: "=",
+         sinopse: "=",
         },
         controllerAs: 'vm',
     });
