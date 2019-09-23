@@ -9,8 +9,22 @@
             titleFilm:"=",
             directorFilm: "=",
             producerFilm: "=",
-            releaseFilm: "="
+            releaseFilm: "=",
+            sinopseFilm: "=",
         },
+        controller: filmsController,
         controllerAs: 'vm',
     })
+
+    function filmsController() {
+        const vm = this; 
+            
+        vm.isOpen = false;
+        vm.abrirModal = abrirModal;
+
+        function abrirModal() {
+            vm.isOpen = !vm.isOpen;
+        }
+    }
+
 })();

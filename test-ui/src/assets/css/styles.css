@@ -142,7 +142,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 15px 0  0 10px;
+    padding: 35px 0  0 10px;
     color: #fff;
 }
 
@@ -159,3 +159,55 @@
     width: 36px;
     cursor: pointer;
 }
+
+.modal {
+    width: 215px;
+    height: 215px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0; 
+}
+
+.modal__title {
+    color: #000;
+    padding-top: 4px;
+}
+
+.modal__text {
+    color: #000;
+    padding-top: 15px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    width: 25px;
+    height: 32px;
+    opacity: 0.3;
+  }
+
+  .close-modal:hover {
+    opacity: 1;
+  }
+
+  .close-modal:before, .close-modal:after {
+    position: absolute;
+    left: 22px;
+    content: ' ';
+    height: 17px;
+    width: 2px;
+    background-color: #333;
+  }
+
+  .close-modal:before {
+    transform: rotate(45deg);
+  }
+
+  .close-modal:after {
+    transform: rotate(-45deg);
+  }
+
+
+  

@@ -4,6 +4,14 @@
         <p class="films__director">Director: {{ vm.directorFilm }}</p>
         <p class="films__producer">Producer: {{ vm.producerFilm }}</p>
         <p class="films__release">Release: {{ vm.releaseFilm }}</p>
-        <info></info>
+        <info 
+            abrir-modal="vm.abrirModal">
+        </info>
+        <modal
+         is-open="vm.isOpen"
+         abrir-modal="vm.abrirModal"
+         receber-sinopse="vm.opening_crawl"
+        >
+        </modal>
     </div>
 </div>
