@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
     "node-sass": "^4.10.0"
   },
   "author": "Leonardo Cesca",
