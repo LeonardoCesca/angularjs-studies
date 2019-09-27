@@ -26,7 +26,7 @@
                 <label>Número de ocorrências</label>
                 <input ng-model="ocorrencias" required type="text" class="form-control" />
             </div>
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button ng-disabled="form.$invalid" type="submit" class="btn btn-primary">Salvar</button>
         </form>
     </div>
     <script src="node_modules/angular/angular.js"></script>
