@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>AngularJS</title>
 </head>
-<body ng-app>
-    <div class="container">
+<body ng-app="app">
+    <div ng-controller="zumbisCtrl" class="container">
         <div class="well">
             <h1>Ocorrências de zumbis</h1>
         </div>
@@ -30,5 +30,13 @@
         </form>
     </div>
     <script src="node_modules/angular/angular.js"></script>
+    <script>
+        angular.module('app', []);
+        angular.module('app').controller('zumbisCtrl', function($scope) {
+            $scope.cep = '12345-678';
+            $scope.bairro = 'Bairro';
+            $scope.ocorrencias = 123;
+        });
+    </script>
 </body>
 </html>
