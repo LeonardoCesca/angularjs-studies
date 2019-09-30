@@ -1,5 +1,12 @@
-angular.module('app', []);
+let app = angular.module('myApp', []);
 
-app.controller('appController', function() {
-    
+app.controller('mainController', function($scope) {
+    $scope.name = 'Leo';
+    $scope.occupation = 'Coder';
+
+    $scope.getname = function() {
+        return 'Leo Cesca'
+    }
+
+    console.log($scope)
 });
