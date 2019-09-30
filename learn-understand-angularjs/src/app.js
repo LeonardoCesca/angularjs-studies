@@ -1,11 +1,7 @@
-let app = angular.module('myApp', ['ngMessages']);
+let app = angular.module('myApp', ['ngMessages', 'ngResource']);
 
-app.controller('mainController', function($scope, $log, $filter) {
+app.controller('mainController', function($scope, $log, $filter, $resource) {
     
-$scope.name = 'Leonardo';
-$scope.formattedname = $filter('uppercase')($scope.name);
-
-$log.info($scope.name);
-$log.info($scope.formattedname);
+console.log($resource)
 
 });
