@@ -10,17 +10,7 @@
 
 <body>
   <div ng-controller="mainController">
-    <form name="myForm">
-      <label>
-        Enter text:
-        <input type="email" ng-model="field" name="myField" required maxlength="15" />
-      </label>
-      <div ng-messages="myForm.myField.$error" role="alert">
-        <div ng-message="required">Please enter a value for this field.</div>
-        <div ng-message="email">This field must be a valid email address.</div>
-        <div ng-message="maxlength">This field can be at most 15 characters long.</div>
-      </div>
-    </form>
+    {{name}}
   </div>
   <script src="node_modules/angular/angular.js"></script>
   <script src="node_modules/angular-messages/angular-messages.js"></script>
