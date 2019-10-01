@@ -1,6 +1,6 @@
 let app = angular.module('myApp', []);
 
-app.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+app.controller('mainController', ['$scope', '$filter', '$timeout', function($scope, $filter, $timeout) {
     $scope.handle = '';
 
     $scope.lowercaseLetter = function() {
@@ -13,10 +13,8 @@ app.controller('mainController', ['$scope', '$filter', function($scope, $filter)
         console.log('New: ' +newValue);
     })
 
-    setTimeout(function() {
-        $scope.$apply(function() {
-            $scope.handle = 'new';
-            console.log('Scope changed')
-        })
+    $timeout(function() {
+        $scope.handle = 'new';
+        console.log('Scope changed')
     }, 3000)
 }]);
