@@ -1,10 +1,5 @@
-let app = angular.module('myApp', ['ngMessages', 'ngResource']);
+let app = angular.module('myApp', []);
 
-app.controller('mainController', ['$scope', '$timeout', function($scope, $timeout) {
-
-   $scope.name= 'Leo';
-
-   $timeout(function() {
-    $scope.name = 'Leonardo';
-   },3000);
+app.controller('mainController', ['$scope', function($scope) {
+    $scope.handle = '';
 }]);
