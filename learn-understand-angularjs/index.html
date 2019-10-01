@@ -28,6 +28,13 @@
     <hr />
 
     <h1>google.com/{{ lowercaseLetter() }}</h1>
+
+    <h3>Rules</h3>
+    <ul>
+      <li ng-repeat="rule in rules">
+        {{rule.rulename}}
+      </li>
+    </ul>
   </div>
   <script src="node_modules/angular/angular.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
