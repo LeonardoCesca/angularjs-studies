@@ -10,36 +10,30 @@
 </head>
 
 <body>
-  <div ng-controller="mainController">
-    <div>
-      <label>What is your twitter handle?</label>
-      <input type="text" ng-model="handle" />
-    </div>
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">AngularJS</a>
+        </div>
 
-    <div class="alert" ng-class="{ 'alert-warning': handle.length < characters, 'alert-danger': handle.length > characters }" ng-show="handle.length !== characters">
-      <div ng-show="handle.length < characters">
-          You have less than 5 characters!
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#/second"><i></i> Second</a></li>
+        </ul>
       </div>
-      <div ng-show="handle.length > characters">
-        You have more than 5 characters!
-      </div>
-    </div>
+    </nav>
+  </header>
+  <div class="container">
 
-    <hr />
+    <div ng-view></div>
 
-    <h1>google.com/{{ lowercaseLetter() }}</h1>
-
-    <h3>Rules</h3>
-    <ul>
-      <li ng-repeat="rule in rules">
-        {{rule.rulename}}
-      </li>
-    </ul>
   </div>
   <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-route/angular-route.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="node_modules/angular-messages/angular-messages.js"></script>
-  <script src="node_modules/angular-resource/angular-resource.js"></script> 
+  <script src="node_modules/angular-resource/angular-resource.js"></script>
   <script src="src/app.js"></script>
 </body>
 

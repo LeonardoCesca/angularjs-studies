@@ -1,19 +1,30 @@
-let app = angular.module('myApp', []);
 
-app.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
-    $scope.handle = '';
+var myApp = angular.module('myApp', ['ngRoute']);
 
-    $scope.lowercaseLetter = function() {
-        return $filter('lowercase')($scope.handle);
-    } 
+myApp.config(function ($routeProvider, $locationProvider) {
+    $locationProvider.hashPrefix('');
+    $routeProvider
+    
+    .when('/', {
+        templateUrl: 'pages/main.html',
+        controller: 'mainController'
+    })
+    
+    .when('/second', {
+        templateUrl: 'pages/second.html',
+        controller: 'secondController'
+    })
+    
+});
 
-    $scope.characters = 5;
+myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
+    
+    $scope.name = 'Main';
+    
+}]);
 
-    $scope.rules = [
-        { rulename: "Must be 5 characters"},
-        { rulename: "Must not be used elsewhere"},
-        { rulename: "Must be cool"},
-    ];
-
-    console.log($scope.rules);
+myApp.controller('secondController', ['$scope', '$log', function($scope, $log) {
+    
+    $scope.name = 'Second';
+    
 }]);

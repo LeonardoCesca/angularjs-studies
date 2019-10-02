@@ -10,6 +10,7 @@
     "angular": "^1.6.4",
     "angular-messages": "^1.7.8",
     "angular-resource": "^1.7.8",
+    "angular-route": "^1.7.8",
     "bootstrap": "^4.3.1"
   },
   "author": "Leonardo Cesca",
