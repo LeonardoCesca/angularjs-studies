@@ -33,10 +33,9 @@ myApp.service('nameService', function() {
 
 myApp.controller('mainController', ['$scope', '$log', 'nameService', function($scope, $log, nameService) {
     
-    $scope.name = 'Main';
+    $scope.name = nameService.name;
     $log.main = 'Property from main';
-    $log.log(nameService.name);
-    
+    $log.log($scope.name)
 }]);
 
 myApp.controller('secondController', ['$scope', '$log', '$routeParams', function($scope, $log, $routeParams) {
