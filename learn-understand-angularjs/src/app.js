@@ -22,32 +22,16 @@ myApp.config(function ($routeProvider, $locationProvider) {
     
 });
 
-myApp.service('nameService', function() {
-    let self = this;
-    this.name = 'Leo';
-
-    this.namelength = function() {
-        return self.name.length;
-    };
-});
-
-myApp.controller('mainController', ['$scope', '$log', 'nameService', function($scope, $log, nameService) {
+myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
     
-    $scope.name = nameService.name;
-
-    $scope.$watch('name', function() {
-        nameService.name = $scope.name;
-    });
-
-    $log.main = 'Property from main';
-    $log.log($scope.name)
 }]);
 
 myApp.controller('secondController', ['$scope', '$log', '$routeParams', function($scope, $log, $routeParams) {
     
-    $scope.name = 'Second';
-    $scope.num = $routeParams.num || 1;
-    $log.second = 'Property from main';
-    $log.log($log);
-    
 }]);
+
+myApp.directive("searchResult", function() {
+    return {
+        template: '<a href="#" class="list-group-item list-group-item-action"><h4 class="list-group-item-heading">Cesca, Leo</h4><p class="list-group-item-text">888 Main St., New York, NY 1111</p></a>'
+    }
+});
