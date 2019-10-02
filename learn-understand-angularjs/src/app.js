@@ -34,6 +34,11 @@ myApp.service('nameService', function() {
 myApp.controller('mainController', ['$scope', '$log', 'nameService', function($scope, $log, nameService) {
     
     $scope.name = nameService.name;
+
+    $scope.$watch('name', function() {
+        nameService.name = $scope.name;
+    });
+
     $log.main = 'Property from main';
     $log.log($scope.name)
 }]);
