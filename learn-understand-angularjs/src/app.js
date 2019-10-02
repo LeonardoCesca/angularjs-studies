@@ -22,11 +22,20 @@ myApp.config(function ($routeProvider, $locationProvider) {
     
 });
 
-myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
+myApp.service('nameService', function() {
+    let self = this;
+    this.name = 'Leo';
+
+    this.namelength = function() {
+        return self.name.length;
+    };
+});
+
+myApp.controller('mainController', ['$scope', '$log', 'nameService', function($scope, $log, nameService) {
     
     $scope.name = 'Main';
     $log.main = 'Property from main';
-    $log.log($log);
+    $log.log(nameService.name);
     
 }]);
 
