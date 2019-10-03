@@ -35,6 +35,9 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams', function
 
 myApp.directive("searchResult", function() {
     return {
-        templateUrl: 'directives/searchresult.html'
+        templateUrl: 'directives/searchresult.html',
+        scope: {
+            personName: "@"
+        }
     }
 });
