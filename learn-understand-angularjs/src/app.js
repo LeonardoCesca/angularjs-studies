@@ -23,7 +23,10 @@ myApp.config(function ($routeProvider, $locationProvider) {
 });
 
 myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
-    
+    $scope.person = {
+        name: 'Leonardo',
+        address: '888 Main St., New York, NY 1111'
+    }
 }]);
 
 myApp.controller('secondController', ['$scope', '$log', '$routeParams', function($scope, $log, $routeParams) {
