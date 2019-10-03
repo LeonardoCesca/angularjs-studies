@@ -32,6 +32,6 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams', function
 
 myApp.directive("searchResult", function() {
     return {
-        template: '<a href="#" class="list-group-item list-group-item-action"><h4 class="list-group-item-heading">Cesca, Leo</h4><p class="list-group-item-text">888 Main St., New York, NY 1111</p></a>'
+        templateUrl: 'directives/searchresult.html'
     }
 });
