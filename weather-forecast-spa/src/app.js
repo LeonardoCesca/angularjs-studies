@@ -1,6 +1,8 @@
 let weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
 
-weatherApp.config(function($routeProvider) {
+weatherApp.config(function($routeProvider, $locationProvider) {
+
+    $locationProvider.hashPrefix('');
 
     $routeProvider
         .when('/', {
