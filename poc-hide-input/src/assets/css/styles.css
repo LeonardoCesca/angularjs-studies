@@ -1,0 +1,8 @@
+.c-container {
+    display: flex;
+    padding: 10px;
+}
+
+.c-container > i {
+    padding: 0 10px;
+}
