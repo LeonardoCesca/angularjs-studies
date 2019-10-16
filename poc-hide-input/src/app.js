@@ -4,7 +4,6 @@ app.controller('appController', function($scope) {
     $scope.isOpen = false;
 
     $scope.showBox = function() {
-        $scope.isOpen = true;
-        alert('oi')
+        $scope.isOpen = !$scope.isOpen;
     }
 })
